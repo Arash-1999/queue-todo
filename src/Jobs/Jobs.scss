@@ -1,0 +1,33 @@
+.list {
+  flex: 1;
+
+  &__title {
+  }
+
+  &__item {
+    background: #ffc600;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: .5em 1em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #434343;
+    transform: skewX(10deg);
+
+    &:nth-child(odd) {
+      transform: skewX(-10deg);
+    }
+  }
+
+  &__remove {
+    border: 3px solid #434343;
+    padding: .5em;
+    background: rgba(255, 255, 255, .2);
+  }
+
+  &__date {
+    font-weight: 400;
+  }
+}

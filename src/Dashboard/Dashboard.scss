@@ -1,0 +1,49 @@
+.dashboard {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 25rem;
+  width: 100%;
+
+  input {
+    outline: none;
+    border: 2px solid #434343;
+    padding: .5rem;
+    margin: .5em 0;
+  }
+
+  &__task > label {
+    display: block;
+    width: 100%
+  }
+
+  &__date{
+    margin-top: 2rem;
+  }
+
+  &__date > label {
+    display: block;
+    margin: 1em;
+
+    > input {
+      display: block;
+    }
+  }
+
+  &__submit {
+    border: 3px solid #434343;
+    background: #ffc600;
+    padding: .5rem;
+    
+    &:hover {
+      background: #ffd600;
+    }
+  }
+}
+
+@media (min-height: 740px) {
+  .dashboard {
+    max-height: 60vh;
+  }
+}
