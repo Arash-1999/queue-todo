@@ -4,7 +4,7 @@ import Jobs from "./../Jobs/Jobs.js";
 import Dashborad from "./../Dashboard/Dashboard.js";
 
 
-const defaultCase = ["please type and add your taks"];
+const defaultCase = ["please type and add your tasks"];
 
 const Todo = (props) => {
   const [queues, setQueues] = useState(defaultCase);

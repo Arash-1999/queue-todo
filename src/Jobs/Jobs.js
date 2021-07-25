@@ -1,12 +1,17 @@
 // list component for showing jobs
+import { useContext } from "react";
+import { QueueContext } from "./../App.js";
+
 import ".//Jobs.scss";
 
 const Jobs = (props) => {
+  const queue = useContext(QueueContext);
+
   return (
     <section className="list">
       <h3 className="list__title">{props.title}</h3>
       <ul className="list__container">
-        {props.queue === true ? props
+        {queue === true ? props
           .queues
           .map((item, index) => {
             return (

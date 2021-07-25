@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import { QueueContext } from "./../App.js";
+
 import TextField from "./../TextField/TextField.js";
 import "./Dashboard.scss";
 
 
 const Dashboard = (props) => {
   let date = props.value.date;
+  const queue = useContext(QueueContext);
 
   return (
     <form onSubmit={props.handleSubmit} className="dashboard">
@@ -12,10 +16,10 @@ const Dashboard = (props) => {
         <TextField 
           inputKey="job"
           type="test"
-          value={props.queue ? props.value.job : props.value}
+          value={queue ? props.value.job : props.value}
           handleChange={props.handleChange}/>
       </div>
-    {props.queue ?
+    {queue ?
       <div className="dashboard__date">
         <p className="dashboard__desc">Type date for task</p>
         <TextField

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 import Header from "./Header/Header.js";
 import Queue from "./Queue/Queue.js";
 import Todo from "./Todo/Todo.js";
+
+export const QueueContext = createContext(true);
 
 const App = () => {
   const [queue, setQueue] = useState(true);
@@ -14,7 +16,9 @@ const App = () => {
   return (
     <section>
       <Header value={queue} handleChange={handelValue}/>
-      {queue ? <Queue queue={queue}/> : <Todo queue={queue}/>}
+      <QueueContext.Provider value={queue}>
+        {queue ? <Queue queue={queue}/> : <Todo queue={queue}/>}
+      </QueueContext.Provider>
     </section>
   );
 }

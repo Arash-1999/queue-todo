@@ -6,7 +6,7 @@ import Dashboard from "./../Dashboard/Dashboard.js";
 import { radix } from "./sort.js";
 
 let list = [
-  {date: [0, 0, 0], job: "Please type and add your tasks"},
+  {date: [], job: "Please type and add your tasks"},
 ];
 
 const Queue = (props) => {
@@ -68,11 +68,9 @@ const Queue = (props) => {
   return (
     <main className="main">
       <Jobs 
-        queue={props.queue}
         removeHandler={removeHandler}
-        queues={queues.length === 0 ? [{job: "Please add your queues", date: []}] : queues} />
+        queues={queues.length === 0 ? [{job: "Please type and add your tasks", date: []}] : queues} />
       <Dashboard
-        queue={props.queue}
         value={current}
         handleChange={handleChange}
         handleSubmit={handleSubmit}/>
